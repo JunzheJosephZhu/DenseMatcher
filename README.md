@@ -1,4 +1,35 @@
 ## This is the official respository for
 # <span style="color:#FF6347">Dense</span><span style="color:magenta">Matcher</span> <img src="figs/banana-icon.svg" width="32"> Learning 3D Semantic <span style="color:#3399FF">Correspondence</span> for Category-Level Manipulation from One Demo
-### [DenseCorr3D Dataset]()
-### [Model Checkpoint]()
+We release the first 3D shape matching dataset with 1. <b>colored</b> meshes 2. <b>diverse</b> categories with large intra-category <b>variations</b>. We provide the inference code for now, and will release the benchmark evaluation code soon.
+### [DenseCorr3D Dataset]() | [Model Checkpoint]()
+
+## Installation
+We provide a script for installation, tested on Ubuntu 20.04.
+1. Install [cuda 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive)
+2. Clone the repo with 
+```
+git clone https://github.com/JunzheJosephZhu/DenseMatcher.git
+cd DenseMatcher
+```
+3. Create a conda environment and install dependencies: 
+```
+conda create -n "densematcher" python=3.9
+conda activate densematcher
+bash setup.sh
+```
+
+## Running Example Notebook
+<!-- Download model checkpoint and dataset from the links above. Unzip the dataset into *DenseCorr3D/* and the model into *checkpoints/* under your working folder.
+
+Activate densematcher environment, run ```jupyter notebook``` and select *example.ipynb* -->
+Code will be released very soon
+
+## Dataset Format
+Our dataset consists of 24 categories containing 599 objects in total. Each object has 4 associated files:
+1. color_mesh.obj: This file contains the original colored mesh used for <b>rendering</b> posed images, for methods that depend on multiview 2D models
+2. simple_mesh.obj: This file contains a simplified version of the original mesh, obtained through remeshing. Each mesh has ~2000 vertices. This is for methods that utilize geometry information (e.g. PointNet/DiffusionNet)
+3. groups.txt: The file contains <b>Dense</b> correspodence annotation labels. Each line consists of vertex indices from one semantic group, where all vertices share the same semantic meaning. For two objects from the same categories, they have the same number of groups with 1-on-1 correspondence.   
+4. groups_visualization.obj: This is only for visualization. View it with [Open3D Viewer](https://www.open3d.org/download/) or [Meshlab](https://www.meshlab.net/) (or any 3D viewer that can show vertex colors) to get a better understanding of correspondence annotations.
+
+The file splits are provided in *train_files.txt, val_files.txt, test_files.txt*
+

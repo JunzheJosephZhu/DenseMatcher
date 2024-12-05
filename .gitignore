@@ -1,1 +1,6 @@
 .vscode
+tmp
+DenseCorr3D
+checkpoints
+**/*pycache*
+*.zip
