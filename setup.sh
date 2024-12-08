@@ -9,6 +9,7 @@ pip install -e ./third_party/ODISE
 pip install -e ./third_party/meshplot
 pip install -e ./third_party/stablediffusion
 pip install -e ./third_party/featup
+pip install -e ./third_party/dift
 pip install pythreejs torch-tb-profiler
 
 # diff3f dependencies

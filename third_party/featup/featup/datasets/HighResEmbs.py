@@ -7,7 +7,7 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 import torchvision.transforms as T
-from featup.featurizers.util import get_featurizer
+from densematcher.featurizers.util import get_featurizer
 from featup.layers import ChannelNorm
 from featup.layers import ChannelNorm
 from featup.util import norm
@@ -17,7 +17,7 @@ from torch.utils.data import Subset
 from torch.utils.data import default_collate
 from tqdm import tqdm
 
-from util import get_dataset
+from .util import get_dataset
 
 torch.multiprocessing.set_sharing_strategy('file_system')
 

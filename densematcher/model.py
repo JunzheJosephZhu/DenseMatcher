@@ -12,7 +12,7 @@ from inspect import signature
 import time
 
 class MeshFeaturizer(nn.Module):
-    def __init__(self, pretrained_upsampler_path, num_views, num_blocks, width, reconstructor_layers=1, num_encoding_functions=8, num_hks=16):
+    def __init__(self, pretrained_upsampler_path, num_views, num_blocks, width, aggre_net_weights_folder="checkpoints/SDDINO_weights", reconstructor_layers=1, num_encoding_functions=8, num_hks=16):
         '''
         pretrained_upsampler_path: path to featup's .ckpt save file
         num_views: 2-tuple, (num_azimuth, num_elevation)
@@ -20,7 +20,7 @@ class MeshFeaturizer(nn.Module):
         '''
         super().__init__()
         self.pretrained_upsampler_path = pretrained_upsampler_path
-        self.extractor_2d = SDDINOFeatureExtractor(pretrained_upsampler_path=pretrained_upsampler_path)
+        self.extractor_2d = SDDINOFeatureExtractor(pretrained_upsampler_path=pretrained_upsampler_path, aggre_net_weights_folder=aggre_net_weights_folder)
         self.H = self.W = self.extractor_2d.num_patches * 16
         self.num_views = num_views
         self.reconstructor_layers = reconstructor_layers

@@ -17,6 +17,7 @@ from featup.layers import ChannelNorm, UnitNorm
 from featup.upsamplers import get_upsampler
 import numpy as np
 import re
+import os
 IMAGENET_DEFAULT_MEAN = (0.485, 0.456, 0.406)
 IMAGENET_DEFAULT_STD = (0.229, 0.224, 0.225)
 
@@ -174,7 +175,7 @@ class DIFTFeatureExtractor(RotationInvariantExtractor):
 
 
 class SDDINOFeatureExtractor(RotationInvariantExtractor):
-    def __init__(self, pretrained_upsampler_path, num_rotations=4):
+    def __init__(self, pretrained_upsampler_path, aggre_net_weights_folder, num_rotations=4):
         '''
         pretrained_upsampler_path decides imsize & num_patches
         in odise clip.py and helper.py state_dict is an empty dict for clip and ldm
@@ -196,7 +197,7 @@ class SDDINOFeatureExtractor(RotationInvariantExtractor):
         self.featurizer = SDDINOFeaturizer(num_patches=self.num_patches, 
                                            diffusion_ver='v1-5', 
                                            extractor_name='dinov2_vitb14', 
-                                           aggre_net_weights_path=f'keypoint_2d/results_spair/best_{self.num_patches * self.patch_size}.PTH', 
+                                           aggre_net_weights_path=f'{aggre_net_weights_folder}/best_{self.num_patches * self.patch_size}.PTH', 
                                            rot_inv=self.rot_inv, 
                                            num_rotations=num_rotations)
         assert self.featurizer.patch_size == self.patch_size

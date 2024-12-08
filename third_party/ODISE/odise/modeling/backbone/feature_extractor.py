@@ -20,7 +20,6 @@ from detectron2.modeling.backbone.resnet import BottleneckBlock, ResNet
 from detectron2.structures import ImageList
 from torch import nn
 from torch.nn import functional as F
-from featup.featurizers.util import resize
 
 from ..meta_arch.helper import FeatureExtractor
 

@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 from torch import nn
-from featup.featurizers.modules.resnet import ResNet, BottleneckBlock
+from .resnet import ResNet, BottleneckBlock
 import torch.nn.functional as F
 
 class DummyAggregationNetwork(nn.Module): # for testing, return the input

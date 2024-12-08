@@ -130,14 +130,14 @@ def get_groups_dmtx(geodesic_distmat, groups):
     '''
     get a [num_rings, num_rings] distance matrix between rings
     '''
-    num_rings = len(groups)
-    d_rings = np.full((num_rings, num_rings), -1.0)
-    for i in range(num_rings):
-        for j in range(num_rings):
+    num_groups = len(groups)
+    d_groups = np.full((num_groups, num_groups), -1.0)
+    for i in range(num_groups):
+        for j in range(num_groups):
             if i == j:
-                d_rings[i, j] = 0
-            elif d_rings[j, i] != -1:
-                d_rings[i, j] = d_rings[j, i]
+                d_groups[i, j] = 0
+            elif d_groups[j, i] != -1:
+                d_groups[i, j] = d_groups[j, i]
             else:
-                d_rings[i, j] = get_distance_between_groups(geodesic_distmat, groups[i], groups[j])
-    return d_rings
+                d_groups[i, j] = get_distance_between_groups(geodesic_distmat, groups[i], groups[j])
+    return d_groups

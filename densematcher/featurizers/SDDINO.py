@@ -9,7 +9,7 @@ from torchvision.transforms import InterpolationMode
 from featup.util import unnorm, pca
 from featup.model_utils.extractor_sd import load_model
 from featup.model_utils.extractor_dino import ViTExtractor
-from featup.featurizers.modules.projection_network import AggregationNetwork
+from .modules.projection_network import AggregationNetwork
 from featup.layers import ChannelNorm, UnitNorm
 
 class SDDINOFeaturizer(nn.Module):
