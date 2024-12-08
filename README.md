@@ -37,6 +37,37 @@ Textured Mesh | Correspondence Annotation
 ![](figs/apples_color.png)  |  ![](figs/apples_annotation2.png)
 ![](figs/animals_color.png) |  ![](figs/animals_annotation.png)
 
+
+After unzipping, your folder should look like:
+```
+-> % tree ./DenseCorr3D 
+DenseCorr3D
+├── all_files.txt
+├── animals
+│   ├── 071b8_toy_animals_017
+│   │   ├── color_mesh.obj
+│   │   ├── groups.txt
+│   │   ├── groups_visualization.obj
+│   │   └── simple_mesh.obj
+│   ├── 13cf7_toy_animals_055
+│   │   ├── color_mesh.obj
+│   │   ├── groups.txt
+│   │   ├── groups_visualization.obj
+│   │   └── simple_mesh.obj
+...
+├── train_files.txt
+├── val_files.txt
+└── zucchini
+    ├── 0aef5e1b2ef446d7a5663674e75d45c8
+    │   ├── color_mesh_0.png
+    │   ├── color_mesh.mtl
+    │   ├── color_mesh.obj
+    │   ├── groups.txt
+    │   ├── groups_visualization.obj
+    │   └── simple_mesh.obj
+...
+```
+
 ## Checkpoints
 The model checkpoints contain weights for 
 1. Aggregation Network(aggrenet) used in ["Telling Left from Right"](https://telling-left-from-right.github.io/), for fusing the features from Stable Diffusion and DINOv2 branches of [SD-DINO](https://sd-complements-dino.github.io/). The input sizes can be 384/512, and output feature sizes will be down by a factor of $16^2$.
