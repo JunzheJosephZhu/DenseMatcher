@@ -71,7 +71,7 @@ DenseCorr3D
 ## Checkpoints
 The model checkpoints contain weights for 
 1. Aggregation Network(aggrenet) used in ["Telling Left from Right"](https://telling-left-from-right.github.io/), for fusing the features from Stable Diffusion and DINOv2 branches of [SD-DINO](https://sd-complements-dino.github.io/). The input sizes can be 384/512, and output feature sizes will be down by a factor of $16^2$.
-2. 2D Feature Upsampler layer weights from [Featup](https://openreview.net/forum?id=GkJiNn2QDF), for upsampling the outputs of aggregation network back to the input image size.
+2. 2D Feature Upsampler layer weights from [FeatUp](https://openreview.net/forum?id=GkJiNn2QDF), for upsampling the outputs of aggregation network back to the input image size.
 3. DiffusionNet weights for our 3D feature refiner "neck". We currently only provide the version that works with 384 image size, but will release the 512 version very soon.
 
 After unzipping, your folder should look like
