@@ -32,9 +32,9 @@ Our dataset consists of 24 categories containing 599 objects in total. Each obje
 
 The file splits are provided in *train_files.txt, val_files.txt, test_files.txt*. Some examples are shown below:
 
-Textured Mesh | Annotation
+Textured Mesh | Correspondence Annotation
 :-------------------------:|:-------------------------:
-![](figs/apples_color.png)  |  ![](figs/apples_annotation.png)
+![](figs/apples_color.png)  |  ![](figs/apples_annotation2.png)
 ![](figs/animals_color.png) |  ![](figs/animals_annotation.png)
 
 ## Checkpoints
