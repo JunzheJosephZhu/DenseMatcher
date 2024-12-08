@@ -1,4 +1,4 @@
-# <span style="color:#FF6347">Dense</span><span style="color:magenta">Matcher</span> <img src="figs/banana-icon.svg" width="32"> Learning 3D Semantic <span style="color:#3399FF">Correspondence</span> for Category-Level Manipulation from One Demo
+# <span style="color:#FF6347">Dense</span><span style="color:magenta">Matcher</span> <img src="figs/banana-icon.svg" width="32">: Learning 3D Semantic <span style="color:#3399FF">Correspondence</span> for Category-Level Manipulation from One Demo
 
 We release ***<b>DenseCorr3D</b>***, the first 3D shape matching dataset  with 1. <b>colored</b> meshes 2. <b>diverse</b> categories with large intra-category <b>variations</b>. 
 
@@ -8,7 +8,7 @@ Our 3D matching results: &#8595;&#8595;&#8595;
 ![model results](figs/results.png)
 
 
-### [DenseCorr3D Dataset](https://drive.google.com/file/d/1bpgsNu8JewRafhdRN4woQL7ObQtfgcpu/view?usp=sharing) | [Model Checkpoints](https://drive.google.com/file/d/1rVNixF4AYYQgmQ-biJaLtbT_wGHPXkCf/view?usp=sharing)
+### [DenseCorr3D Dataset](https://drive.google.com/file/d/1bpgsNu8JewRafhdRN4woQL7ObQtfgcpu/view?usp=sharing) | [Model Checkpoints](https://drive.google.com/file/d/1rVNixF4AYYQgmQ-biJaLtbT_wGHPXkCf/view?usp=sharing) | [Website](https://tea-lab.github.io/DenseMatcher/)
 
 ## Installation
 We provide a script for installation, tested on Ubuntu 20.04.
