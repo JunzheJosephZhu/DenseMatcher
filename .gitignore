@@ -4,3 +4,8 @@ DenseCorr3D
 checkpoints
 **/*pycache*
 *.zip
+*.pt
+*.so
+**/build
+*.egg-info
+__pycache__

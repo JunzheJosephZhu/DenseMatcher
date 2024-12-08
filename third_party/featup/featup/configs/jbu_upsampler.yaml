@@ -1,0 +1,45 @@
+# Environment Args
+output_root: 'exp_jbu'
+pytorch_data_dir: '/mnt/disks/tepan_datasets'
+submitting_to_aml: false
+
+# Dataset args
+dataset: "imagenet"
+img_size: 192
+kernel_size: 16
+
+# Model Args
+model_type: "sd_dino"
+activation_type: "token"
+rot_inv: True
+mem_eff: True
+
+# Upsampling args
+outlier_detection: True
+upsampler_type: "jbu_stack"
+downsampler_type: "attention"
+max_pad: 20
+max_zoom: 2
+n_jitters: 5
+random_projection: 30
+crf_weight: 0.001
+filter_ent_weight: 0.0
+tv_weight: 0.0
+channelnorm: False
+unitnorm: False
+implicit_sup_weight: 1.0
+
+# Training args
+batch_size: 1 # Note: batch size per GPU
+epochs: 1
+num_gpus: 4
+num_workers: 2
+lr: 1e-3
+train_steps: 10000
+
+# No need to change
+hydra:
+  run:
+    dir: "."
+  output_subdir: ~
+
