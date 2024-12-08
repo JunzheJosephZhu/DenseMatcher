@@ -1,0 +1,40 @@
+# Environment Args
+output_root: 'exp/exp_with_daily/exp_mvmatcher'
+
+# Model
+pretrained_upsampler_path: exp/exp_jbu_imsize=384_steps=10000_channelnorm=False_unitnorm=False_rotinv=True/checkpoints/jbu/sd_dino_jbu_stack_imagenet_attention_crf_0.001_tv_0.0_ent_0.0/epoch=0-step=10000.ckpt
+mem_eff: True
+num_views: [3, 1] # override with num_views=[x, x]
+num_blocks: 8 # diffusionnet
+width: 512
+reconstructor_layers: 4 # -1 mean use mirror arch, else is the number of MLP layers
+
+# Data
+cut_prob: 0.5
+blob_prob: 0.0 # this is on top of cut_prob. Has to be cut in order to be blobbed. Set to 0.5
+cut_plane_jitter: 0.00 # can try 0.05
+release: True # if false, use all splits for training
+objaverse_dir: "assets/mesh_scale0.3_objaverse"
+daily_dir: "assets/mesh_scale0.3_daily_final"
+omniobject_dir: null
+benchmark_verts: null
+
+# Loss
+lambda_recon: 10.0
+
+# Training args
+batch_size: 1 # Note: batch size per GPU
+epochs: 100
+num_gpus: 8
+num_workers: 2
+prefetch_factor: 5
+lr: 1e-3
+train_steps: -1
+resume: ''
+
+# No need to change
+hydra:
+  run:
+    dir: "."
+  output_subdir: ~
+
