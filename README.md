@@ -25,10 +25,10 @@ conda activate densematcher
 bash setup.sh
 ```
 
-## Running Example Notebook(Release progress)
+## Running Example Notebook(release in progress)
 Download model checkpoints and dataset from the links above. Unzip the dataset into *DenseCorr3D/* and the model into *checkpoints/* under your working folder.
 
-Activate densematcher environment, run ```jupyter notebook``` and select *example.ipynb*
+Activate densematcher environment, run ```jupyter notebook``` and select [example.ipynb](example.ipynb)
 
 ## Dataset Format
 Our dataset consists of 24 categories containing 599 objects in total. Each object has 4 associated files:
