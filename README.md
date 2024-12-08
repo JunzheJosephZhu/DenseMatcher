@@ -1,6 +1,6 @@
 # <span style="color:#FF6347">Dense</span><span style="color:magenta">Matcher</span> <img src="figs/banana-icon.svg" width="32"> Learning 3D Semantic <span style="color:#3399FF">Correspondence</span> for Category-Level Manipulation from One Demo
 We release the first 3D shape matching dataset with 1. <b>colored</b> meshes 2. <b>diverse</b> categories with large intra-category <b>variations</b>. We provide the inference code for now, and will release the benchmark evaluation code soon.
-### [DenseCorr3D Dataset](https://drive.google.com/file/d/1bpgsNu8JewRafhdRN4woQL7ObQtfgcpu/view?usp=sharing) | [Model Checkpoint](Coming Soon)
+### [DenseCorr3D Dataset](https://drive.google.com/file/d/1bpgsNu8JewRafhdRN4woQL7ObQtfgcpu/view?usp=sharing) | [Model Checkpoints](https://drive.google.com/file/d/1rVNixF4AYYQgmQ-biJaLtbT_wGHPXkCf/view?usp=sharing)
 
 ## Installation
 We provide a script for installation, tested on Ubuntu 20.04.
@@ -17,11 +17,10 @@ conda activate densematcher
 bash setup.sh
 ```
 
-## Running Example Notebook
-<!-- Download model checkpoint and dataset from the links above. Unzip the dataset into *DenseCorr3D/* and the model into *checkpoints/* under your working folder.
+## Running Example Notebook(Release progress)
+Download model checkpoints and dataset from the links above. Unzip the dataset into *DenseCorr3D/* and the model into *checkpoints/* under your working folder.
 
-Activate densematcher environment, run ```jupyter notebook``` and select *example.ipynb* -->
-Code will be released very soon
+Activate densematcher environment, run ```jupyter notebook``` and select *example.ipynb*
 
 ## Dataset Format
 Our dataset consists of 24 categories containing 599 objects in total. Each object has 4 associated files:
@@ -32,3 +31,18 @@ Our dataset consists of 24 categories containing 599 objects in total. Each obje
 
 The file splits are provided in *train_files.txt, val_files.txt, test_files.txt*
 
+## Checkpoints
+The model checkpoints contain weights for 
+1. Aggregation Network(aggrenet) used in ["Telling Left from Right"](https://telling-left-from-right.github.io/), for fusing the features from Stable Diffusion and DINOv2 branches of [SD-DINO](https://sd-complements-dino.github.io/). The input sizes can be 384/512, and output feature sizes will be down by a factor of $16^2$.
+2. 2D Feature Upsampler layer weights from [Featup](https://openreview.net/forum?id=GkJiNn2QDF), for upsampling the outputs of aggregation network back to the input image size.
+3. DiffusionNet weights for our 3D feature refiner "neck". We currently only provide the version that works with 384 image size, but will release the 512 version very soon.
+
+After unzipping, your folder should look like
+```
+-> % tree ./checkpoints -L 1
+./checkpoints
+├── exp_mvmatcher_imsize=384_width=512_nviews=3x1_wrecon=10.0_cutprob=0.5_blocks=8_release_jitter=0.0
+├── featup_imsize=384_channelnorm=False_unitnorm=False_rotinv=True
+├── featup_imsize=512_channelnorm=False_unitnorm=False_rotinv=True
+└── SDDINO_weights
+```
