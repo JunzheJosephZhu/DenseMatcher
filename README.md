@@ -30,7 +30,7 @@ Our dataset consists of 24 categories containing 599 objects in total. Each obje
 3. groups.txt: The file contains <b>Dense</b> correspodence annotation labels. Each line consists of vertex indices from one semantic group, where all vertices share the same semantic meaning. For two objects from the same categories, they have the same number of groups with 1-on-1 correspondence.   
 4. groups_visualization.obj: This is only for visualization. View it with [Open3D Viewer](https://www.open3d.org/download/) or [Meshlab](https://www.meshlab.net/) (or any 3D viewer that can show vertex colors) to get a better understanding of correspondence annotations.
 
-The file splits are provided in *train_files.txt, val_files.txt, test_files.txt*
+The file splits are provided in *train_files.txt, val_files.txt, test_files.txt*. Some examples are shown below:
 
 Textured Mesh | Annotation
 :-------------------------:|:-------------------------:
