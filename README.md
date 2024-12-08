@@ -1,5 +1,5 @@
 # <span style="color:#FF6347">Dense</span><span style="color:magenta">Matcher</span> <img src="figs/banana-icon.svg" width="32"> Learning 3D Semantic <span style="color:#3399FF">Correspondence</span> for Category-Level Manipulation from One Demo
-<a><img src='figs/animals.png' width='432' /><img src='figs/apples.png' width='432' /></a>
+![](figs/results.png)
 We release the first 3D shape matching dataset with 1. <b>colored</b> meshes 2. <b>diverse</b> categories with large intra-category <b>variations</b>. We provide the inference code for now, and will release the benchmark evaluation code soon.
 ### [DenseCorr3D Dataset](https://drive.google.com/file/d/1bpgsNu8JewRafhdRN4woQL7ObQtfgcpu/view?usp=sharing) | [Model Checkpoints](https://drive.google.com/file/d/1rVNixF4AYYQgmQ-biJaLtbT_wGHPXkCf/view?usp=sharing)
 
@@ -31,6 +31,11 @@ Our dataset consists of 24 categories containing 599 objects in total. Each obje
 4. groups_visualization.obj: This is only for visualization. View it with [Open3D Viewer](https://www.open3d.org/download/) or [Meshlab](https://www.meshlab.net/) (or any 3D viewer that can show vertex colors) to get a better understanding of correspondence annotations.
 
 The file splits are provided in *train_files.txt, val_files.txt, test_files.txt*
+
+Textured Mesh | Annotation
+:-------------------------:|:-------------------------:
+![](figs/apples_color.png)  |  ![](figs/apples_annotation.png)
+![](figs/animals_color.png) |  ![](figs/animals_annotation.png)
 
 ## Checkpoints
 The model checkpoints contain weights for 
