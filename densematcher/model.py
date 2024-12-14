@@ -128,7 +128,8 @@ class MeshFeaturizer(nn.Module):
         mesh_simp: simplified mesh with a reasonable number of vertices. Use to compute vertex features
         cameras: cameras extrinsics, tuple of torch.Tensor R and t with shape [N, 3, 3] and [N, 3].
         NOTE: R is **transpose** of normal R!!!!! This is because pytorch3d has weird ass conventions 
-        output normalized per-vertex features
+        returns normalized per-vertex features
+        if return_mvfeatures=True, additionally return unnormalized per-vertex features, and unnormalized multiview features 
         '''
         mesh_raw = mesh_raw.to(self.device)
         mesh_simp = mesh_simp.to(self.device)

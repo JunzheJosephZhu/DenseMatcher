@@ -7,12 +7,12 @@ from tqdm import tqdm
 import numpy as np
 import scipy.optimize
 from scipy.optimize import fmin, fmin_powell, fmin_cg, fmin_bfgs, fmin_ncg, fmin_tnc, fmin_cobyla, fmin_slsqp, fmin_l_bfgs_b, linear_sum_assignment
-from pyFM.mesh import geometry
+from densematcher.pyFM.mesh import geometry
 
-import pyFM.signatures as sg
-import pyFM.optimize as opt_func
-import pyFM.refine
-import pyFM.spectral as spectral
+import densematcher.pyFM.signatures as sg
+import densematcher.pyFM.optimize as opt_func
+import densematcher.pyFM.refine
+import densematcher.pyFM.spectral as spectral
 def sigmoid(z):
     return 1/(1 + np.exp(-z))
 

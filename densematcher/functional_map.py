@@ -1,7 +1,7 @@
 import numpy as np
 import torch
-from pyFM.mesh import TriMesh
-from pyFM.functional import FunctionalMapping
+from densematcher.pyFM.mesh import TriMesh
+from densematcher.pyFM.functional import FunctionalMapping
 from scipy.optimize import fmin_l_bfgs_b, linear_sum_assignment
 import time
 import os
