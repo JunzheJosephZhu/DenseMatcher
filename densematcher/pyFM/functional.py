@@ -579,7 +579,7 @@ class FunctionalMapping:
         if not self.fitted:
             raise ValueError("The Functional map must be fit before refining it")
 
-        self._FM_icp = pyFM.refine.mesh_icp_refine(self.FM, self.mesh1, self.mesh2, nit=nit, tol=tol, return_p2p=False,
+        self._FM_icp = densematcher.pyFM.refine.mesh_icp_refine(self.FM, self.mesh1, self.mesh2, nit=nit, tol=tol, return_p2p=False,
                                                    use_adj=use_adj, n_jobs=n_jobs, verbose=verbose)
 
         if overwrite:
@@ -611,7 +611,7 @@ class FunctionalMapping:
             sub2 = self.mesh2.extract_fps(subsample)
             sub = (sub1,sub2)
 
-        self._FM_zo = pyFM.refine.mesh_zoomout_refine(self.FM, self.mesh1, self.mesh2, nit,
+        self._FM_zo = densematcher.pyFM.refine.mesh_zoomout_refine(self.FM, self.mesh1, self.mesh2, nit,
                                                       step=step, subsample=sub, verbose=verbose)
         if overwrite:
             self.FM_type = 'zoomout'
