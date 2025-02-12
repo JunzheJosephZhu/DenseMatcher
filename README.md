@@ -34,7 +34,7 @@ Activate densematcher environment, run ```jupyter notebook``` and select [exampl
 Our dataset consists of 24 categories containing 599 objects in total. Each object has 4 associated files:
 1. color_mesh.obj: This file contains the original colored mesh used for <b>rendering</b> posed images, for methods that depend on multiview 2D models
 2. simple_mesh.obj: This file contains a simplified version of the original mesh, obtained through remeshing. Each mesh has ~2000 vertices. This is for methods that utilize geometry information (e.g. PointNet/DiffusionNet)
-3. groups.txt: The file contains <b>Dense</b> correspodence annotation labels. Each line consists of vertex indices from one semantic group, where all vertices share the same semantic meaning. For two objects from the same categories, they have the same number of groups with 1-on-1 correspondence.   
+3. groups.txt: The file contains <b>Dense</b> correspondence annotation labels. Each line consists of vertex indices from one semantic group, where all vertices share the same semantic meaning. For two objects from the same categories, they have the same number of groups with 1-on-1 correspondence.   
 4. groups_visualization.obj: This is only for visualization. View it with [Open3D Viewer](https://www.open3d.org/download/) or [Meshlab](https://www.meshlab.net/) (or any 3D viewer that can show vertex colors) to get a better understanding of correspondence annotations.
 
 The file splits are provided in *train_files.txt, val_files.txt, test_files.txt*. Some examples are shown below:
