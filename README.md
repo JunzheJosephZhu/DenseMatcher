@@ -8,7 +8,7 @@ Our 3D matching results: &#8595;&#8595;&#8595;
 ![model results](figs/results.png)
 
 
-### [DenseCorr3D Dataset](https://drive.google.com/file/d/1bpgsNu8JewRafhdRN4woQL7ObQtfgcpu/view?usp=sharing) | [Model Checkpoints](https://drive.google.com/file/d/1rVNixF4AYYQgmQ-biJaLtbT_wGHPXkCf/view?usp=sharing) | [Website](https://tea-lab.github.io/DenseMatcher/)
+### [DenseCorr3D Dataset](https://drive.google.com/file/d/1bpgsNu8JewRafhdRN4woQL7ObQtfgcpu/view?usp=sharing) | [Model Checkpoints](https://drive.google.com/file/d/1rVNixF4AYYQgmQ-biJaLtbT_wGHPXkCf/view?usp=sharing) | [Website](https://tea-lab.github.io/DenseMatcher/)| [Citation](#citation)
 
 ## Installation
 We provide a script for installation, tested on Ubuntu 20.04.
@@ -89,4 +89,16 @@ After unzipping, your folder should look like
 ├── featup_imsize=384_channelnorm=False_unitnorm=False_rotinv=True
 ├── featup_imsize=512_channelnorm=False_unitnorm=False_rotinv=True
 └── SDDINO_weights
+```
+
+## Citation
+```
+@inproceedings{
+zhu2025densematcher,
+title={DenseMatcher: Learning 3D Semantic Correspondence for Category-Level Manipulation from One Demo},
+author={Junzhe Zhu and Yuanchen Ju and Junyi Zhang and Muhan Wang and Zhecheng Yuan and Kaizhe Hu and Huazhe Xu},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
+url={https://openreview.net/forum?id=8oFvUBvF1u}
+}
 ```
