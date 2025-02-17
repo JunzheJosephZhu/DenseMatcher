@@ -8,7 +8,7 @@ Our 3D matching results: &#8595;&#8595;&#8595;
 ![model results](figs/results.png)
 
 
-### [DenseCorr3D Dataset](https://drive.google.com/file/d/1bpgsNu8JewRafhdRN4woQL7ObQtfgcpu/view?usp=sharing) | [Model Checkpoints](https://drive.google.com/file/d/1rVNixF4AYYQgmQ-biJaLtbT_wGHPXkCf/view?usp=sharing) | [Website](https://tea-lab.github.io/DenseMatcher/)| [Citation](#citation)
+### [Arxiv](https://openreview.net/pdf?id=8oFvUBvF1u) | [DenseCorr3D Dataset](https://drive.google.com/file/d/1bpgsNu8JewRafhdRN4woQL7ObQtfgcpu/view?usp=sharing) | [Model Checkpoints](https://drive.google.com/file/d/1rVNixF4AYYQgmQ-biJaLtbT_wGHPXkCf/view?usp=sharing) | [Website](https://tea-lab.github.io/DenseMatcher/)| [Citation](#citation)
 
 ## Installation
 We provide a script for installation, tested on Ubuntu 20.04.
